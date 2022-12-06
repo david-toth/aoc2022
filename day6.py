@@ -6,13 +6,13 @@ data = data[0].strip()
 
 for i in range(len(data)-4):
     x = data[i:i+4]
-    if len(set(x)) == len(x):
+    if len(set(x)) == 4:
         print(i+4)
         break
 
 # Day 6, part 2
 for i in range(len(data)-14):
     x = data[i:i+14]
-    if len(set(x)) == len(x):
+    if len(set(x)) == 14:
         print(i+14)
         break
