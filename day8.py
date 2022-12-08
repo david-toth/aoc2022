@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[5]:
-
-
 import numpy as np
 
 with open("day8.txt") as f:
@@ -48,10 +42,3 @@ for i in range(1, len(x)-1):
         if score > max_score:
             max_score = score
 print(max_score)
-
-
-# In[ ]:
-
-
-
-
