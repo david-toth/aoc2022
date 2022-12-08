@@ -1,17 +1,16 @@
-# Day 1, Part 1
 with open("inputs/day1.txt") as f:
-    lines = f.readlines()
+    data = [l.strip() for l in f.readlines()]
 
-cals = []
-elf = []
-for line in lines:
-    if line == '\n':
-        cals.append(elf)
-        elf = []
+# Part 1
+calories = []
+elf = 0
+for i in data:
+    if i == "":
+        calories.append(elf)
+        elf = 0
     else:
-        elf.append(int(line.strip()))
+        elf += int(i)
+print(max(calories))
 
-print(max([sum(i) for i in cals]))
-
-# Day 1, part 2
-print(sum(sorted([sum(i) for i in cals], reverse=True)[:3]))
+# Part 2
+print(sum(sorted(calories, reverse=True)[:3]))
