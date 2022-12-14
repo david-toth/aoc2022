@@ -27,8 +27,9 @@ def search(part):
     q = deque()
     for r in range(R):
         for c in range(C):
-            if (data[r][c] == "S" and part == 1) or (data[r][c] == "a" and part == 2):
-                q.append(((r,c), 0))
+            if ((data[r][c] == "S" and part == 1) or 
+                (data[r][c] == "a" and part == 2)):
+                    q.append(((r,c), 0))
     
     visited = set()
     while q:
@@ -41,8 +42,9 @@ def search(part):
         for dr, dc in nghbrs:
             rr = r + dr
             cc = c + dc
-            if (0<=rr<R) and (0<=cc<C) and (cost_map[rr][cc]<=cost_map[r][c]+1):
-                q.append(((rr, cc), d+1))
+            if ((0<=rr<R) and (0<=cc<C) and 
+                (cost_map[rr][cc]<=cost_map[r][c]+1)):
+                    q.append(((rr, cc), d+1))
                 
 print(search(1))
 print(search(2))
